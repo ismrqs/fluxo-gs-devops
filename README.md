@@ -41,7 +41,7 @@ A API utiliza um Dockerfile multi-stage, separando as etapas de compilação e e
 
 O acesso externo ocorre pelo IP público da VM, utilizando a porta 8080, liberada por uma regra do Network Security Group (NSG).
 
-**Diagrama de arquitetura:**
+**Diagrama:** `docs/arquitetura-fluxo.jpg`
 
 <img width="1920" height="1080" alt="Arquitetura - Fluxo(4)" src="https://github.com/user-attachments/assets/070e8161-e79e-42cf-92e1-6d2ebcc4ba8e" />
 
