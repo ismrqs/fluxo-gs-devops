@@ -43,8 +43,7 @@ O acesso externo ocorre pelo IP público da VM, utilizando a porta 8080, liberad
 
 **Diagrama de arquitetura:**
 
-<img width="739" height="365" alt="image" src="https://github.com/user-attachments/assets/183eb0b9-d70d-489c-8b5a-5b1f0222c123" />
-
+<img width="1920" height="1080" alt="Arquitetura - Fluxo(4)" src="https://github.com/user-attachments/assets/070e8161-e79e-42cf-92e1-6d2ebcc4ba8e" />
 
 ## 5. API
 
