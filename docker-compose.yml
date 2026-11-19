@@ -1,0 +1,63 @@
+
+services:
+  oracle:
+    image: gvenzl/oracle-free:23-slim
+    container_name: fluxo-oracle
+
+    environment:
+      ORACLE_PASSWORD: ${ORACLE_PASSWORD:?Configure ORACLE_PASSWORD no .env}
+      APP_USER: FLUXO
+      APP_USER_PASSWORD: ${ORACLE_PASSWORD:?Configure ORACLE_PASSWORD no .env}
+
+    expose:
+      - "1521"
+
+    volumes:
+      - fluxo-oracle-data:/opt/oracle/oradata
+
+    networks:
+      - fluxo-network
+
+    healthcheck:
+      test: ["CMD", "healthcheck.sh"]
+      interval: 20s
+      timeout: 10s
+      retries: 30
+      start_period: 180s
+
+    restart: unless-stopped
+
+  api:
+    image: fluxo-api:1.0
+
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    container_name: fluxo-api
+
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      ASPNETCORE_URLS: http://+:8080
+      ConnectionStrings__OracleConnection: "User Id=FLUXO;Password=${ORACLE_PASSWORD};Data Source=oracle:1521/FREEPDB1"
+
+    ports:
+      - "8080:8080"
+
+    depends_on:
+      oracle:
+        condition: service_healthy
+
+    networks:
+      - fluxo-network
+
+    restart: unless-stopped
+
+volumes:
+  fluxo-oracle-data:
+    name: fluxo-oracle-data
+
+networks:
+  fluxo-network:
+    name: fluxo-network
+    driver: bridge
