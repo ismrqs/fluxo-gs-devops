@@ -40,7 +40,11 @@ A API utiliza um Dockerfile multi-stage e executa com usuário não-root.
 
 **Diagrama de arquitetura:** será disponibilizado na pasta `docs`.
 
-## 5. Funcionalidades da API
+## 5. API
+
+Código original da API disponível no repositório: [FLUXO_GS_2026_NET](https://github.com/pgmoraesdev/FLUXO_GS_2026_NET)
+
+## 6. Funcionalidades da API
 
 | Método | Endpoint | Descrição |
 | --- | --- | --- |
@@ -56,7 +60,7 @@ A API utiliza um Dockerfile multi-stage e executa com usuário não-root.
 
 As entidades também possuem operações de consulta por ID, atualização e exclusão.
 
-## 6. Execução com Docker
+## 7. Execução com Docker
 
 Após clonar o repositório na VM Ubuntu, instale o Docker:
 
@@ -97,7 +101,7 @@ docker exec fluxo-api id
 docker volume ls
 ```
 
-## 7. Provisionamento no Azure
+## 8. Provisionamento no Azure
 
 A infraestrutura é criada utilizando a Azure CLI, por meio do script `scripts/azure-cli.sh`.
 
@@ -127,7 +131,7 @@ ssh azureuser@IP_PUBLICO
 
 Dentro da VM, clone novamente o repositório e siga as instruções da seção 6.
 
-## 8. Testes em nuvem e persistência
+## 9. Testes em nuvem e persistência
 
 A API pode ser acessada pelo IP público da VM:
 
@@ -158,7 +162,7 @@ docker compose up -d --wait
 
 Os registros cadastrados devem permanecer disponíveis.
 
-## 9. Como Docker e Cloud Computing podem ser utilizados na solução proposta pelo grupo?
+## 10. Como Docker e Cloud Computing podem ser utilizados na solução proposta pelo grupo?
 
 O Docker permite executar a API do FLUXO e o banco Oracle em ambientes isolados, facilitando a implantação e a comunicação entre os serviços. Com o Docker Compose, conseguimos gerenciar os containers e preservar os dados utilizando um volume persistente.
 
