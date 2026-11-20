@@ -429,7 +429,19 @@ Após a conclusão, o resultado esperado é `false`.
 
 A exclusão do grupo de recursos remove a máquina virtual e os recursos associados, incluindo os discos. Esse procedimento deve ser realizado somente após a conclusão da demonstração.
 
-## 14. Como Docker e Cloud Computing podem ser utilizados na solução proposta pelo grupo?
+
+## 14 ODS relacionados
+
+| ODS | Relação com a proposta |
+| --- | --- |
+| **ODS 11 - Cidades e comunidades sustentáveis** | É o principal alinhamento do FLUXO. A meta 11.2 trata do acesso ao transporte seguro, acessível e sustentável e da ampliação do transporte público. A proposta busca apoiar esse objetivo com informação sobre lotação e demanda. |
+| **ODS 9 - Indústria, inovação e infraestrutura** | Como alinhamento complementar à meta 9.1, o projeto propõe usar informação e tecnologia para apoiar a gestão da infraestrutura de mobilidade e a qualidade do serviço. |
+
+As relações acima representam o alinhamento proposto para a solução; o protótipo não mede o cumprimento dessas metas.
+
+**Referências:** [ODS 11, ONU](https://sdgs.un.org/goals/goal11) e [ODS 9, ONU](https://sdgs.un.org/goals/goal9).
+
+## 15. Como Docker e Cloud Computing podem ser utilizados na solução proposta pelo grupo?
 
 O Docker permite executar a API do FLUXO e o banco Oracle em ambientes isolados, facilitando a implantação e a comunicação entre os serviços. Com o Docker Compose, conseguimos gerenciar os containers e preservar os dados utilizando um volume persistente.
 
